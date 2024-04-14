@@ -194,9 +194,11 @@ function logger(func, logFunc) {
       }
       return arg.toString();
     });
-    console.log(logFunc(`${func.name}(${formattedArgs.join(',')}) starts`));
+    // console.log(logFunc(`${func.name}(${formattedArgs.join(',')}) starts`));
+    logFunc(`${func.name}(${formattedArgs.join(',')}) starts`);
     const res = func.apply(this, args);
-    console.log(logFunc(`${func.name}(${formattedArgs.join(',')}) ends`));
+    // console.log(logFunc(`${func.name}(${formattedArgs.join(',')}) ends`));
+    logFunc(`${func.name}(${formattedArgs.join(',')}) ends`);
     return res;
   };
 }
