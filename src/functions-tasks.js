@@ -51,21 +51,8 @@ function getFunctionBody(func) {
  *  ]) => [0, 1, 2]
  *
  */
-function getArgumentsCount(/* funcs */) {
-  throw new Error('Not implemented');
-  // if (funcs.length === 0) return [];
-  // console.log(funcs[0].arguments);
-  // const arrArgsCnt = [];
-  // const args = [];
-  // funcs.forEach((fn) => {
-  //   // if (fn.arguments === null) arrArgsCnt.push(0);
-  //   // args = [fn.arguments];
-  //   console.log(fn(...args));
-  //   if (args === null) arrArgsCnt.push(0);
-  //   console.log(args);
-  //   arrArgsCnt.push(args.length);
-  // });
-  // return arrArgsCnt;
+function getArgumentsCount(funcs) {
+  return funcs.map((fn) => fn.length);
 }
 
 /**
