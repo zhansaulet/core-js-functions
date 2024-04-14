@@ -33,7 +33,8 @@ function getCurrentFunctionName() {
  *
  */
 function getFunctionBody(func) {
-  return func.functionBody;
+  if (func === undefined) return '';
+  return func.toString();
 }
 
 /**
@@ -50,20 +51,21 @@ function getFunctionBody(func) {
  *  ]) => [0, 1, 2]
  *
  */
-function getArgumentsCount(funcs) {
-  if (funcs.length === 0) return [];
-  console.log(funcs[0].arguments);
-  const arrArgsCnt = [];
-  const args = [];
-  funcs.forEach((fn) => {
-    // if (fn.arguments === null) arrArgsCnt.push(0);
-    // args = [fn.arguments];
-    console.log(fn(...args));
-    if (args === null) arrArgsCnt.push(0);
-    console.log(args);
-    arrArgsCnt.push(args.length);
-  });
-  return arrArgsCnt;
+function getArgumentsCount(/* funcs */) {
+  throw new Error('Not implemented');
+  // if (funcs.length === 0) return [];
+  // console.log(funcs[0].arguments);
+  // const arrArgsCnt = [];
+  // const args = [];
+  // funcs.forEach((fn) => {
+  //   // if (fn.arguments === null) arrArgsCnt.push(0);
+  //   // args = [fn.arguments];
+  //   console.log(fn(...args));
+  //   if (args === null) arrArgsCnt.push(0);
+  //   console.log(args);
+  //   arrArgsCnt.push(args.length);
+  // });
+  // return arrArgsCnt;
 }
 
 /**
@@ -83,7 +85,7 @@ function getArgumentsCount(funcs) {
  *
  */
 function getPowerFunction(exponent) {
-  return function (number) {
+  return function power(number) {
     return number ** exponent;
   };
 }
@@ -101,8 +103,19 @@ function getPowerFunction(exponent) {
  *   getPolynom(8)     => y = 8
  *   getPolynom()      => null
  */
-function getPolynom() {
+function getPolynom(/* ...args */) {
   throw new Error('Not implemented');
+  // console.log(args);
+  // if (args.length === 0) return null;
+  // return function () {
+  //   const polynomObj = [];
+  //   const reversedArgs = args.reverse();
+  //   for (let i = 0; i < args.length; i += 1) {
+  //     polynomObj.push({ x: i, y: reversedArgs[i] });
+  //   }
+
+  //   return polynomObj;
+  // };
 }
 
 /**
