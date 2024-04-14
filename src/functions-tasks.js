@@ -132,8 +132,17 @@ function getPolynom(/* ...args */) {
  *   ...
  *   memoizer() => the same random number  (next run, returns the previous cached result)
  */
-function memoize(/* func */) {
-  throw new Error('Not implemented');
+function memoize(func) {
+  // throw new Error('Not implemented');
+  const cache = {};
+  return (...args) => {
+    if (args in cache) {
+      return cache[args];
+    }
+    const res = func.apply(this, args);
+    cache[args] = res;
+    return res;
+  };
 }
 
 /**
